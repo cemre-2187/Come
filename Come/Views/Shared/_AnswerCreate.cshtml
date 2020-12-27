@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@model Come.Models.Answer
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+
+
+
+<section>
+    <div class="w-100 pb-90">
+        <div class="container">
+            <div class="post-detail-form w-100">
+                <h3 class="mb-0">Cevap Yaz</h3>
+
+                <form class="w-100" asp-controller="Answers" asp-action="QuestionAnswer">
+                    <div class="row">
+
+
+                        <div style="display:none" class="form-group">
+                            <label asp-for="AnswerDate" class="control-label"></label>
+                            <input asp-for="AnswerDate" class="form-control" value="@ViewData["Date"]" />
+                            <span asp-validation-for="AnswerDate" class="text-danger"></span>
+                        </div>
+                        <div style="display:none" class="form-group">
+                            <label class="control-label">User</label>
+                            <input asp-for="User" class="form-control" value="@UserManager.GetUserName(User)" />
+                            <span asp-validation-for="User" class="text-danger"></span>
+                        </div>
+
+                        <div style="display:none" class="form-group">
+                            <label asp-for="QuestionId" class="control-label"></label>
+                            <input asp-for="QuestionId" class="form-control" value="@ViewData["QuestionId"]" />
+                        </div>
+
+                  
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <textarea asp-for="AnswerBody" class="w-100 brd-rd15 mt-30" placeholder="Cevabınız"></textarea>
+                            <input type="submit" value="Yanıtla" class="theme-btn fill-btn2 mt-30" />
+                        </div>
+                    </div>
+                </form>
+            </div><!-- Post Detail Form -->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

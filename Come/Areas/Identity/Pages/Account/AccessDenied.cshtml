@@ -1,0 +1,24 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+    <section class="mb-5">
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Giriş Red edildi</h2>
+
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+<header>
+    <h1 class="text-danger">@ViewData["Title"]</h1>
+    <p class="text-danger">You do not have access to this resource.</p>
+</header>

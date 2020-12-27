@@ -1,0 +1,51 @@
+﻿@model Come.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+    <section>
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Hakkımızda</h2>
+                        <p class="mb-0 text-white">Sitemiz nasıl kuruldu?</p>
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+<h1>Yeni Oluştur</h1>
+
+<h4>Kategori</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Kategori</label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Resim</label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

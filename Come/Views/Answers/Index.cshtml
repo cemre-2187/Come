@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Come.Models.Answer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <section>
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Hakkımızda</h2>
+                        <p class="mb-0 text-white">Sitemiz nasıl kuruldu?</p>
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Yeni Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Cevap
+            </th>
+            <th>
+            Tarih
+            </th>
+            <th>
+               Kullanıcı
+            </th>
+            <th>
+               Cevap
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question.QuestionId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AnswerId">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.AnswerId">Detay</a> |
+                <a asp-action="Delete" asp-route-id="@item.AnswerId">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

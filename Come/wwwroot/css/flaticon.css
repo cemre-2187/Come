@@ -1,0 +1,165 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 29/03/2019 14:50
+  	*/
+
+@font-face {
+  font-family: "metaicon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "metaicon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="metaicon-"]:before, [class*=" metaicon-"]:before,
+[class^="metaicon-"]:after, [class*=" metaicon-"]:after {
+  font-family: metaicon;
+  font-style: normal;
+  /* font-size: 20px; */
+}
+
+.metaicon-search:before { content: "\f100"; }
+.metaicon-arrow-point-to-right:before { content: "\f101"; }
+.metaicon-arrow-down-sign-to-navigate:before { content: "\f102"; }
+.metaicon-arrowhead-thin-outline-to-the-left:before { content: "\f103"; }
+.metaicon-cancel-music:before { content: "\f104"; }
+.metaicon-pause-sign:before { content: "\f105"; }
+.metaicon-telephone-handle-silhouette:before { content: "\f106"; }
+.metaicon-keyboard:before { content: "\f107"; }
+.metaicon-black-envelope:before { content: "\f108"; }
+.metaicon-hexagon:before { content: "\f109"; }
+.metaicon-clock:before { content: "\f10a"; }
+.metaicon-menu:before { content: "\f10b"; }
+.metaicon-menu-1:before { content: "\f10c"; }
+.metaicon-black-shop-tag:before { content: "\f10d"; }
+.metaicon-globe:before { content: "\f10e"; }
+.metaicon-idea:before { content: "\f10f"; }
+.metaicon-analytics:before { content: "\f110"; }
+.metaicon-rating:before { content: "\f111"; }
+.metaicon-digital-marketing:before { content: "\f112"; }
+.metaicon-search-1:before { content: "\f113"; }
+.metaicon-social-media:before { content: "\f114"; }
+.metaicon-analytics-1:before { content: "\f115"; }
+.metaicon-digital-marketing-1:before { content: "\f116"; }
+.metaicon-stadistics:before { content: "\f117"; }
+.metaicon-analytics-2:before { content: "\f118"; }
+.metaicon-digital-marketing-2:before { content: "\f119"; }
+.metaicon-communication:before { content: "\f11a"; }
+.metaicon-typewriter:before { content: "\f11b"; }
+.metaicon-email:before { content: "\f11c"; }
+.metaicon-target:before { content: "\f11d"; }
+.metaicon-keyword:before { content: "\f11e"; }
+.metaicon-crown:before { content: "\f11f"; }
+.metaicon-target-1:before { content: "\f120"; }
+.metaicon-line-chart:before { content: "\f121"; }
+.metaicon-phonebook:before { content: "\f122"; }
+.metaicon-pie-chart:before { content: "\f123"; }
+.metaicon-head:before { content: "\f124"; }
+.metaicon-medal:before { content: "\f125"; }
+.metaicon-supermarket:before { content: "\f126"; }
+.metaicon-growth:before { content: "\f127"; }
+.metaicon-cube:before { content: "\f128"; }
+.metaicon-speed:before { content: "\f129"; }
+.metaicon-028-arrow-metamax:before { content: "\f12a"; }
+.metaicon-affiliate:before { content: "\f12b"; }
+.metaicon-laptop:before { content: "\f12c"; }
+.metaicon-video-player:before { content: "\f12d"; }
+.metaicon-email-1:before { content: "\f12e"; }
+.metaicon-idea-1:before { content: "\f12f"; }
+.metaicon-presentation:before { content: "\f130"; }
+.metaicon-speed-test:before { content: "\f131"; }
+.metaicon-startup:before { content: "\f132"; }
+.metaicon-settings:before { content: "\f133"; }
+.metaicon-billboard:before { content: "\f134"; }
+.metaicon-comments:before { content: "\f135"; }
+.metaicon-tag:before { content: "\f136"; }
+.metaicon-newspaper:before { content: "\f137"; }
+.metaicon-light-bulb:before { content: "\f138"; }
+.metaicon-eye:before { content: "\f139"; }
+.metaicon-zoom-in:before { content: "\f13a"; }
+.metaicon-web-page:before { content: "\f13b"; }
+.metaicon-seo-and-web:before { content: "\f13c"; }
+.metaicon-idea-2:before { content: "\f13d"; }
+.metaicon-website-1:before { content: "\f13e"; }
+.metaicon-optimization:before { content: "\f13f"; }
+.metaicon-location:before { content: "\f140"; }
+.metaicon-user-experience:before { content: "\f141"; }
+.metaicon-social-media-1:before { content: "\f142"; }
+.metaicon-thumb-up:before { content: "\f143"; }
+.metaicon-clipboard-1:before { content: "\f144"; }
+.metaicon-shield:before { content: "\f145"; }
+.metaicon-calendar:before { content: "\f146"; }
+.metaicon-quality:before { content: "\f147"; }
+.metaicon-portfolio:before { content: "\f148"; }
+.metaicon-team:before { content: "\f149"; }
+.metaicon-diamond:before { content: "\f14a"; }
+.metaicon-target-3:before { content: "\f14b"; }
+.metaicon-presentation-2:before { content: "\f14c"; }
+.metaicon-humanpictos:before { content: "\f14d"; }
+.metaicon-worldwide:before { content: "\f14e"; }
+.metaicon-panel:before { content: "\f14f"; }
+.metaicon-networking:before { content: "\f150"; }
+.metaicon-line-chart-1:before { content: "\f151"; }
+.metaicon-laptop-1:before { content: "\f152"; }
+.metaicon-headset:before { content: "\f153"; }
+.metaicon-contract:before { content: "\f154"; }
+.metaicon-laptop-2:before { content: "\f155"; }
+.metaicon-goal:before { content: "\f156"; }
+.metaicon-add:before { content: "\f157"; }
+.metaicon-remove:before { content: "\f158"; }
+.metaicon-send-button:before { content: "\f159"; }
+.metaicon-send:before { content: "\f15a"; }
+.metaicon-fax:before { content: "\f15b"; }
+.metaicon-shopping-bag:before { content: "\f15c"; }
+.metaicon-pie-chart-1:before { content: "\f15d"; }
+.metaicon-target-4:before { content: "\f15e"; }
+.metaicon-check-mark:before { content: "\f15f"; }
+.metaicon-play:before { content: "\f160"; }
+.metaicon-heart:before { content: "\f161"; }
+.metaicon-sharing-interface:before { content: "\f162"; }
+.metaicon-star-in-black-of-five-points-shape:before { content: "\f163"; }
+.metaicon-navigate-arrows-pointing-to-down:before { content: "\f164"; }
+.metaicon-quotes:before { content: "\f165"; }
+.metaicon-volume-level:before { content: "\f166"; }
+.metaicon-delete:before { content: "\f167"; }
+.metaicon-cancel:before { content: "\f168"; }
+.metaicon-wordpress-logo:before { content: "\f169"; }
+.metaicon-rocket:before { content: "\f16a"; }
+.metaicon-shop-1:before { content: "\f16b"; }
+.metaicon-medal-2:before { content: "\f16c"; }
+.metaicon-handshake:before { content: "\f16d"; }
+.metaicon-target-5:before { content: "\f16e"; }
+.metaicon-settings-1:before { content: "\f16f"; }
+.metaicon-megaphone-1:before { content: "\f170"; }
+.metaicon-line-chart-2:before { content: "\f171"; }
+.metaicon-open-book:before { content: "\f172"; }
+.metaicon-clipboard-2:before { content: "\f173"; }
+.metaicon-responsive-1:before { content: "\f174"; }
+.metaicon-paper-plane:before { content: "\f175"; }
+.metaicon-worldwide-1:before { content: "\f176"; }
+.metaicon-lifesaver:before { content: "\f177"; }
+.metaicon-wall-clock-1:before { content: "\f178"; }
+.metaicon-presentation-3:before { content: "\f179"; }
+.metaicon-human-resources:before { content: "\f17a"; }
+.metaicon-support:before { content: "\f17b"; }
+.metaicon-arrow-pointing-to-right:before { content: "\f17c"; }
+.metaicon-click:before { content: "\f17d"; }
+.metaicon-arrow-pointing-to-left:before { content: "\f17e"; }
+.metaicon-cart:before { content: "\f17f"; }
+.metaicon-arrow-pointing-to-down:before { content: "\f180"; }
+.metaicon-arrow-pointing-to-up:before { content: "\f181"; }
+.metaicon-right-arrow:before { content: "\f182"; }
+.metaicon-left-arrow:before { content: "\f183"; }
+.metaicon-hexagonal:before { content: "\f184"; }
+.metaicon-left-quote:before { content: "\f185"; }

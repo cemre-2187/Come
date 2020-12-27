@@ -1,0 +1,80 @@
+﻿@model Come.Models.Question
+
+@{
+    ViewData["Title"] = "Create";
+}
+    <section>
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Hakkımızda</h2>
+                        <p class="mb-0 text-white">Sitemiz nasıl kuruldu?</p>
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+<h1>Soru Oluştur</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Başlık</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Kısa Açıklama</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Soru</label>
+                <textarea cols="30" rows="10" asp-for="Body" class="form-control"></textarea>
+                <input name="image" type="file" id="upload" class="hidden" onchange="">
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Kullanıcı</label>
+                <input asp-for="User" class="form-control" />
+                <span asp-validation-for="User" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Resim</label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tarih</label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsApproved" /> Onay
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Kategori</label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

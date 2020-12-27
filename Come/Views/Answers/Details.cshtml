@@ -1,0 +1,56 @@
+﻿@model Come.Models.Answer
+
+@{
+    ViewData["Title"] = "Details";
+}
+    <section>
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Hakkımızda</h2>
+                        <p class="mb-0 text-white">Sitemiz nasıl kuruldu?</p>
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+<h1>Details</h1>
+
+<div>
+    <h4>Answer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+         Cevap
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AnswerBody)
+        </dd>
+        <dt class="col-sm-2">
+         Tarih
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AnswerDate)
+        </dd>
+        <dt class="col-sm-2">
+          Kullanıcı
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.User)
+        </dd>
+        <dt class="col-sm-2">
+          Soru
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Question.Body)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AnswerId">Düzenle</a> |
+    <a asp-action="Index">Listeye Dön</a>
+</div>

@@ -1,0 +1,61 @@
+﻿@model Come.Models.Answer
+
+@{
+    ViewData["Title"] = "Create";
+}
+    <section>
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Hakkımızda</h2>
+                        <p class="mb-0 text-white">Sitemiz nasıl kuruldu?</p>
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+<h1>Yeni oluştur</h1>
+
+<h4>Cevap</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Cevap</label>
+                <textarea cols="30" rows="10" asp-for="AnswerBody" class="form-control"></textarea>
+                <input name="image" type="file" id="upload" class="hidden" onchange="">
+                <span asp-validation-for="AnswerBody" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tarih</label>
+                <input asp-for="AnswerDate" class="form-control" />
+                <span asp-validation-for="AnswerDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Kullanıcı</label>
+                <input asp-for="User" class="form-control" />
+                <span asp-validation-for="User" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Soru</label>
+                <select asp-for="QuestionId" class ="form-control" asp-items="ViewBag.QuestionId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

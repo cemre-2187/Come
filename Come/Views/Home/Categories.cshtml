@@ -1,0 +1,201 @@
+﻿
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+@model Come.Models.CategoryQuestion;
+
+
+@{
+    ViewData["Title"] = "Kategoriler";
+}
+
+
+
+
+<section>
+    <div class="w-100 pt-60 position-relative">
+        <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+        <div class="container">
+            <div class="page-title-wrap text-center w-100 d-inline-block">
+                <div class="page-title-inner d-inline-block">
+                    <h2 class="mb-0 text-color7">Kategorilerimiz</h2>
+                    <p class="mb-0 text-white">Soru sormaya kategori seçerek başlayabilirsiniz.</p>
+                </div>
+
+            </div><!-- Page Title Wrap -->
+        </div>
+    </div>
+</section>
+<section>
+    <div class="w-100 py-100">
+        <div class="container">
+            <div class="service-wrap w-100">
+                <ul class="mb-0 list-unstyled d-flex flex-wrap w-100">
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-laptop-code cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">01</i>
+                                    <h3 class="mb-0">Teknoloji</h3>
+                                    <p class="mb-0">
+                                        Teknoloji ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="1">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+
+                                    <i class="fas fa-crown cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">02</i>
+                                    <h3 class="mb-0">Tarih</h3>
+                                    <p class="mb-0">
+                                        Tarih ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="4">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-futbol cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">03</i>
+                                    <h3 class="mb-0">Spor</h3>
+                                    <p class="mb-0">
+                                        Spor ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="3">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-trophy cs1" cs1></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">04</i>
+                                    <h3 class="mb-0">Oyun</h3>
+                                    <p class="mb-0">
+                                        Oyun ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="12">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-tshirt cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">05</i>
+                                    <h3 class="mb-0">Moda</h3>
+                                    <p class="mb-0">
+                                        Moda ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="13">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-microscope cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">06</i>
+                                    <h3 class="mb-0">Bilim</h3>
+                                    <p class="mb-0">
+                                        Bilim ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="2">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-utensils cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="fas fa-utensils"></i>
+                                    <h3 class="mb-0">Yemek</h3>
+                                    <p class="mb-0">
+                                        Yemek ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="10">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-heartbeat cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">05</i>
+                                    <h3 class="mb-0">Sağlık</h3>
+                                    <p class="mb-0">
+                                        Sağlık ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="9">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-box-wrap">
+                            <div class="service-box">
+                                <span class="icon">
+                                    <i class="fas fa-arrows-alt cs1"></i>
+                                </span>
+                                <div class="service-info">
+                                    <i class="font-style-normal">06</i>
+                                    <h3 class="mb-0">Diğer</h3>
+                                    <p class="mb-0">
+                                        Diğer konularla ile ilgili merak ettikleriniz için tıklayınız
+                                    </p>
+                                    <a class="service-btn" asp-controller="Home" asp-action="Category" asp-route-id="11">Kategoriye Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div><!-- Service Wrap -->
+        </div>
+    </div>
+</section>

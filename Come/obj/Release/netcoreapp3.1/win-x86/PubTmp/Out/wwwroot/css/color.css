@@ -1,0 +1,86 @@
+/*===== Primary Color =====*/
+
+/*===== Background Color =====*/
+.thm-bg,
+.thm-layer:before,
+.service-box::after
+{
+	background-color: #ffe27a;
+}
+
+/*===== Text Color =====*/
+.thm-clr
+{
+	color: #ffe27a;
+}
+
+/*===== Border Color =====*/
+.thm-brd-clr,
+{
+	border-color: #ffe27a;
+}
+
+
+{
+	border-top-color: #ffe27a;
+}
+
+
+{
+	border-bottom-color: #ffe27a;
+}
+
+
+{
+	border-left-color: #ffe27a;
+}
+
+
+{
+	border-right-color: #ffe27a;
+}
+
+
+
+
+/*===== Secondary Color =====*/
+
+/*===== Background Color =====*/
+.scndry-bg,
+.scndry-layer:before,
+.scndry-btn
+{
+	background-color: #9d5f36;
+}
+
+/*===== Text Color =====*/
+.scndry-clr
+{
+	color: #9d5f36;
+}
+
+/*===== Border Color =====*/
+.scndry-brd-clr
+{
+	border-color: #9d5f36;
+}
+
+
+{
+	border-top-color: #9d5f36;
+}
+
+
+{
+	border-bottom-color: #9d5f36;
+}
+
+
+{
+	border-left-color: #9d5f36;
+}
+
+
+{
+	border-right-color: #9d5f36;
+}

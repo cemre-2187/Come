@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Come.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <section>
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Hakkımızda</h2>
+                        <p class="mb-0 text-white">Sitemiz nasıl kuruldu?</p>
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+<p>
+    <a asp-action="Create">Yeni Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              Kategori
+            </th>
+            <th>
+             Resim
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoryId">Düzenle</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoryId">Detay</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoryId">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Come.Models.Question>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <section>
+        <div class="w-100 pt-60 position-relative">
+            <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+            <div class="container">
+                <div class="page-title-wrap text-center w-100 d-inline-block">
+                    <div class="page-title-inner d-inline-block">
+                        <h2 class="mb-0 text-color7">Hakkımızda</h2>
+                        <p class="mb-0 text-white">Sitemiz nasıl kuruldu?</p>
+                    </div>
+
+                </div><!-- Page Title Wrap -->
+            </div>
+        </div>
+    </section>
+
+<p>
+    <a asp-action="Create">Soru Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+           Başlık
+            </th>
+            <th>
+            Kısa Açıklama
+            </th>
+            <th>
+            Soru
+            </th>
+            <th>
+               Kullanıcı
+            </th>
+            <th>
+           Resim
+            </th>
+            <th>
+              Tarih
+            </th>
+            <th>
+             Onay
+            </th>
+            <th>
+              Kategori
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsApproved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.QuestionId">Düzenle</a> 
+                <a asp-action="Details" asp-route-id="@item.QuestionId">Detay</a> 
+                <a asp-action="Delete" asp-route-id="@item.QuestionId">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,89 @@
+﻿@model Come.Models.QuestionAnswer;
+@{
+    ViewData["Title"] = "QuesAnswer";
+}
+
+
+
+
+
+
+<section>
+    <div class="w-100 pt-60 position-relative">
+        <div class="fixed-bg" style="background-image: url(/images/bbg3.jpg);"></div>
+        <div class="container">
+            <div class="page-title-wrap text-center w-100 d-inline-block">
+                <div class="page-title-inner d-inline-block">
+                    <h2 class="mb-0 text-color7">Sor Bakalım!</h2>
+                    <p class="mb-0 text-white">
+                        Aklınıza takılan herhangi bir sorunuzu sitemizde
+                        paylaşabilirsiniz.
+                    </p>
+                </div>
+                <div class="breadcrumbs-wrap w-100">
+
+                    <a asp-controller="Home" asp-action="Ask" style="color:white;background-color:transparent; border-radius:15px;border-style:groove; border-color: white;"
+                       class="btn btn-primary">Soru Sor</a>
+
+                </div>
+            </div><!-- Page Title Wrap -->
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <div class="w-100 pb-70">
+        <div class="container">
+            <article class="blog-detail-wrap position-relative  w-100">
+                <h1>@Html.DisplayFor(model => model.Question.Title)</h1>
+                <div class="post-detail-desc w-100">
+                    <p class="mb-0">
+                        @Html.Raw(Model.Question.Body)
+                    </p>
+                    <p>   <i style="color:darkblue" class="fas fa-user mr-2"></i>  @Html.DisplayFor(model => model.Question.User)<i style="color:darkblue" class="far fa-calendar-alt mr-2 ml-5"></i> @Html.DisplayFor(model => model.Question.Date) </p>
+                    @foreach (var item in Model.Answers)
+                    {
+
+                        <blockquote class="brd-rd20 w-100">
+                            <p class="mb-0">
+                                @Html.Raw(item.AnswerBody)
+                            </p>
+                            <div class="w-100 mt-40 post-detail-meta d-flex flex-wrap align-items-center">
+                                <div class="post-author">
+                                 
+                                    <span>
+                                        <i style="color:darkblue" class="fas fa-user mr-2"></i>   @item.User
+                                    </span>
+                                   
+                                </div>
+                                
+                                <span class="post-detail-cate">
+                                    @item.AnswerDate
+                                </span>
+                            </div>
+                        </blockquote>
+
+
+
+
+
+                    }
+
+
+
+                </div>
+
+            </article><!-- Blog Detail Wrap -->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+@await Html.PartialAsync("../Shared/_AnswerCreate", Model.Answers1)
+

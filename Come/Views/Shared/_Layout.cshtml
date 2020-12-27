@@ -1,0 +1,392 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+   
+   
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="assets/images/favicon.png" sizes="32x32" type="image/png">
+  
+
+    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="~/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/css/slick.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/css/color.css">
+    <style>
+          .cs4:hover {
+            background-color: white;
+            color: blue;
+        }
+        #AdminPanel {
+            color: white;
+        }
+
+        .AdminList {
+            color: white;
+            background-color: #343a40;
+            border: none;
+        }
+
+
+
+        #UserImg {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: gray;
+            position: center;
+            margin: auto;
+        }
+
+
+        .textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+
+
+
+
+
+
+        .box1 {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 0 10px;
+            background: #00171d;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 0 0 2px rgba(0,7,10,1);
+        }
+
+            .box1 .icon1 {
+                width: 100%;
+                height: 100%;
+                background: #00171d;
+                transition: 0.5s;
+            }
+
+                .box1 .icon1 .fa {
+                    font-size: 4em;
+                    line-height: 100px;
+                    color: #f8f7f3;
+                }
+
+            .box1:hover .icon1 {
+                transform: scale(0);
+            }
+
+            .box1 .details1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #03a9f4;
+                transition: 0.5s;
+                transform: scale(2);
+                opacity: 0;
+            }
+
+            .box1:hover .details1 {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            .box1 .details1 .h31 {
+                margin: 0;
+                padding: 0;
+                line-height: 100px;
+                font-size: 24px;
+                color: white;
+            }
+
+            .box1 .details1:nth-child(2) .details1 {
+                background: #e91e63;
+            }
+
+            .box1 .details1:nth-child(2) .details1 {
+                background: #607d8b;
+            }
+             .cs1{
+            font-size: 6rem;
+            color:#99B5CD;
+        }
+        .service-box-wrap:hover i{
+           color:white
+        }
+         .cs2{
+                border-radius: 15px;
+            }
+    </style>
+</head>
+<body>
+
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+
+
+
+        @if (User.IsInRole("Admin"))
+        {
+
+            <div class="pos-f-t">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-dark p-4">
+                        <h5 class="text-white h4">Panel Yönetimi</h5>
+
+                        <ul class="list-group list-group-horizontal bg-dark">
+                            <li style="text-decoration:none;color:white" class="list-group-item AdminList"><a class="btn btn-dark" asp-controller="Questions" asp-action="Index">Soru Düzenle</a></li>
+                            <li style="text-decoration:none;color:white" class="list-group-item AdminList"><a class="btn btn-dark" asp-controller="Answers" asp-action="Index">Cevap Düzenle</a></li>
+                            <li style="text-decoration:none;color:white" class="list-group-item AdminList"><a class="btn btn-dark" asp-controller="Categories" asp-action="Index">Kategori Düzenle</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <nav class="navbar navbar-dark bg-dark">
+                    <button id="AdminPanel" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span style="color:white" class="navbar-toggler-icon"></span> Admin Paneli
+                    </button>
+                </nav>
+            </div>
+        }
+
+    }
+
+    <div id="mta-page-loader-container" class="mta-loader-container style1">
+        <div id="mta-page-loader" class="mta-loader">
+            <div class="inner"></div>
+            <img class="loader-logo" src="~/images/loader-logo.png" alt="Loader Logo">
+        </div>
+    </div>
+    <header class="stick style1 logo-left sticky">
+        <div class="container d-flex flex-row justify-content-between flex-nowrap">
+            <div class="header-nav-wrap w-100">
+                <nav class="nav-wrap d-flex flex-row align-items-center justify-content-between flex-nowrap">
+                    <div class="menu-wrap d-flex flex-row justify-content-start flex-nowrap w-100">
+                        <div style="margin-right: 30px;margin-top: -10px;" class="logo">
+                            <a class="desktop-logo" asp-controller="Home" asp-action="Index">
+                                <img class="default-logo img-fluid" src="~/images/bisorun.png" alt="Logo"
+                                     srcset="~/images/bisorun.png 2x">
+                                <img class="sticky-logo img-fluid" src="~/images/bisorun.png" alt="Logo"
+                                     srcset="~/images/bisorun.png 2x">
+                            </a>
+                        </div><!-- Logo -->
+                        <div style="float: left" class="menu d-flex flex-row align-items-center flex-nowrap w-100">
+                            <ul class="main-menu mb-0 list-unstyled d-flex flex-row align-items-center justify-content-start flex-wrap">
+                                <li>
+                                    <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+
+                                </li>
+                                <li>
+                                    <a asp-controller="Home" asp-action="About" title="">Hakkımızda</a>
+
+                                </li>
+                                <li>
+                                    <a asp-controller="Home" asp-action="Categories" title="">Kategoriler</a>
+
+                                </li>
+
+                                <li><a asp-controller="Home" asp-action="Contact" title="">İletişim</a></li>
+
+                            </ul>
+
+
+
+                        </div><!-- Menu -->
+                    </div><!-- Menu Wrap -->
+                    <div style="display:inline" class="menu-right-icons d-flex flex-row align-items-center justify-content-end flex-nowrap">
+                        @await Html.PartialAsync("~/Views/Shared/_LoginPartial.cshtml")
+
+                    </div>
+                    <div style="display:inline" class="menu-right-icons d-flex flex-row align-items-center justify-content-end flex-nowrap">
+                        @await Html.PartialAsync("~/Views/Shared/_Logintwo.cshtml")
+
+                    </div>
+                </nav>
+            </div><!-- Header Nav Wrap -->
+        </div>
+    </header><!-- Header -->
+
+
+    <div class="responsive-header w-100">
+        <div class="responsive-topbar w-100">
+            <div class="container d-flex flex-wrap justify-content-between">
+                <div class="logo">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img class="img-fluid" src="~/images/bisorun.png"
+                             alt="Logo">
+                    </a>
+                </div><!-- Logo -->
+                <div class="menu-right-icons text-white d-flex flex-row align-items-center justify-content-end flex-nowrap">
+                    <span class="responsive-menu-btn"><i class="fas fa-align-justify"></i></span>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="responsive-menu">
+            <div class="logo d-inline-block w-100">
+                <a asp-controller="Home" asp-action="Index">
+                    <img class="img-fluid" src="~/images/bisorun.png"
+                         alt="Logo">
+                </a>
+                <ul style="list-style:none">
+                    <li class="mb-2">
+                        @await Html.PartialAsync("~/Views/Shared/_LoginPartial.cshtml")
+                    </li>
+                    <li class="mb-2">
+                        @await Html.PartialAsync("~/Views/Shared/_Logintwo.cshtml") 
+                    </li>
+                </ul>
+              
+               
+            </div>
+            <ul class="mb-0 list-unstyled">
+                <li>
+                    <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+
+                </li>
+                <li>
+                    <a sp-controller="Home" asp-action="About">Hakkımızda</a>
+
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Categories">Kategoriler</a>
+
+                </li>
+
+                <li><a asp-controller="Home" asp-action="Contact">İletişim</a></li>
+                <li>
+                @await Html.PartialAsync("~/Views/Shared/_LoginPartial.cshtml")
+                </li>
+                <li>
+                @await Html.PartialAsync("~/Views/Shared/_Logintwo.cshtml")
+                </li>
+
+            </ul>
+        </div><!-- Responsive Menu -->
+    </div><!-- Responsive Header -->
+
+
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer>
+        <div class="w-100 pt-70 bg-color14 text-color15 position-relative">
+            <div class="scroll-top-btn position-absolute">
+                <a href="javascript:void(0);" title="">
+                    <i class="metaicon-arrow-pointing-to-up"></i>
+                </a>
+            </div>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="widget w-100">
+                            <h4 class="text-white">Hakkımızda</h4>
+                            <p>Aklınıza takılan ve cevabınızı bulamadığınız soruları sitemizde bizimle paylaşabilirsiniz.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="widget w-100">
+                            <h4 class="text-white">İletişim</h4>
+                            <ul class="mb-0 list-unstyled">
+                                <li>info@bisorun.com</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="widget w-100">
+                            <h4 class="text-white">Kategoriler</h4>
+                            <ul class="mb-0 list-unstyled">
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="1">Teknoloji</a></li>
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="4">Tarih</a></li>
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="3">Spor</a></li>
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="12">Oyun</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="widget w-100">
+                            <h4 class="text-white">Kategoriler</h4>
+                            <ul class="mb-0 list-unstyled">
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="13">Moda</a></li>
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="2">Bilim</a></li>
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="10">Yemek</a></li>
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="9">Sağlık</a></li>
+                                <li><a asp-controller="Home" asp-action="Category" asp-route-id="11">Diğer</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div><!-- Footer Wrap -->
+
+                <div class="copyright w-100">
+                    <p class="mb-0">Copyright &copy; 2020. Tüm hakları saklıdır.</p>
+                </div><!-- Copyright -->
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="~/js/script.js"></script>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+ 
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/scroll-up-bar.min.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/counterup.min.js"></script>
+    <script src="~/js/perfect-scrollbar.min.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/ResizeSensor.min.js"></script>
+    <script src="~/js/theia-sticky-sidebar.min.js"></script>
+    <script src="~/js/custom-scripts.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
